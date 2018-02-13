@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  scope '/admin', module: 'admin' do
+  # scope '/admin', module: 'admin' do
+  #   resources :stats, only: [:index]
+  # end
+
+  namespace :admin do
     resources :stats, only: [:index]
   end
   
